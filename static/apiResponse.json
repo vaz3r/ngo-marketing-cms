@@ -1,0 +1,12 @@
+{
+    "brand": "Rehash Trash",
+    "logo": "/rehash-trash/logo.jpeg",
+    "slogan": "Rehash Trash: Recycling Rubbish, Renewing Lives",
+    "stories":[
+        {
+            "id": 1,
+            "content": "Rehash Trash: Recycling Rubbish, Renewing Lives",
+            "image": "/rehash-trash/2.jpeg"
+        }
+    ]
+}

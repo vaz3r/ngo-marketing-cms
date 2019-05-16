@@ -1,16 +1,26 @@
 <template>
   <div class="container">
-    <StoryHeader />
+    <StoryHeader :brand-logo="rawData.logo" :brand-name="rawData.brand" />
     <StoryNavigation />
-    <StoryContent />
+    <StoryContent
+      :story-img="rawData.stories[0].image"
+      :story-headline="rawData.stories[0].content"
+    />
   </div>
 </template>
 
 <style>
 .container {
   display: flex;
-  width: 363.375px;
+  width: 100vw;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 420px;
+    margin-bottom: 0px;
+  }
 }
 </style>
 
@@ -24,6 +34,9 @@ export default {
     StoryHeader,
     StoryNavigation,
     StoryContent
+  },
+  props: {
+    rawData: Object
   }
 }
 </script>

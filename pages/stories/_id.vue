@@ -1,6 +1,6 @@
 <template>
   <section>
-    <BaseStory />
+    <BaseStory :raw-data="rawData" />
   </section>
 </template>
 
@@ -18,10 +18,20 @@ section {
 
 <script>
 import BaseStory from '~/components/BaseStory.vue'
+import axios from 'axios'
 
 export default {
   components: {
     BaseStory
+  },
+  async asyncData() {
+    const res = await axios.get(
+      'http://www.mocky.io/v2/5cdd13d23000000426e23493'
+    )
+
+    return {
+      rawData: res.data
+    }
   }
 }
 </script>

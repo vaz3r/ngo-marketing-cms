@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <img src="/rehash-trash/logo.jpeg" />
-    <a>Rehash Trash {{ id }}</a>
+    <img :src="brandLogo" />
+    <a>{{ brandName }}</a>
   </div>
 </template>
 
@@ -10,7 +10,11 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-top: 26px;
+  margin-left: 9px;
+  position: absolute;
+  top: 30px;
+  width: 95vw;
+  z-index: 2;
 }
 
 .header img {
@@ -23,10 +27,22 @@
   font-weight: 700;
   font-size: 1rem;
 }
+
+@media only screen and (min-width: 600px) {
+  .header {
+    margin-left: 10px;
+    width: 405px;
+    top: 25px;
+  }
+}
 </style>
 
 <script>
 export default {
+  props: {
+    brandLogo: String,
+    brandName: String
+  },
   computed: {
     id() {
       return this.$route.params.id
