@@ -1,11 +1,8 @@
 <template>
   <div class="container">
     <StoryHeader :brand-logo="rawData.logo" :brand-name="rawData.brand" />
-    <StoryNavigation />
-    <StoryContent
-      :story-img="rawData.stories[0].image"
-      :story-headline="rawData.stories[0].content"
-    />
+    <StoryNavigation :stories-count="rawData.stories.length" />
+    <StoryContent :raw-data="rawData" />
   </div>
 </template>
 

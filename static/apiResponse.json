@@ -7,6 +7,21 @@
             "id": 1,
             "content": "Rehash Trash: Recycling Rubbish, Renewing Lives",
             "image": "/rehash-trash/2.jpeg"
+        },
+        {
+            "id": 2,
+            "content": "Recycling Rubbish: Environment + Community",
+            "image": "/rehash-trash/3.jpeg"
+        },
+        {
+            "id": 3,
+            "content": "Renewing Lives: Female Empowerment",
+            "image": "/rehash-trash/4.jpeg"
+        },
+        {
+            "id": 4,
+            "content": "RehashTrash.org",
+            "image": "/rehash-trash/shop-1.jpeg"
         }
     ]
 }

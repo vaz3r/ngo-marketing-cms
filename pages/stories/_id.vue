@@ -1,6 +1,7 @@
 <template>
   <section>
-    <BaseStory :raw-data="rawData" />
+    <BaseStory v-if="isValid" :raw-data="rawData" />
+    <StoryException v-else />
   </section>
 </template>
 
@@ -18,19 +19,28 @@ section {
 
 <script>
 import BaseStory from '~/components/BaseStory.vue'
+import StoryException from '~/components/StoryException.vue'
 import axios from 'axios'
 
 export default {
   components: {
-    BaseStory
+    BaseStory,
+    StoryException
   },
-  async asyncData() {
-    const res = await axios.get(
-      'http://www.mocky.io/v2/5cdd13d23000000426e23493'
-    )
+  async asyncData({ route }) {
+    const response = await axios
+      .get('http://www.mocky.io/v2/5cde98713000002b00430a39')
+      .catch(e => {
+        return { isValid: false }
+      })
 
-    return {
-      rawData: res.data
+    if (response.data !== undefined) {
+      return {
+        rawData: response.data,
+        isValid: true
+      }
+    } else {
+      return { isValid: false }
     }
   }
 }

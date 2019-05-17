@@ -1,10 +1,39 @@
 <template>
   <div class="navigation">
-    <div class="navigation-element navigation-active"></div>
-    <div class="navigation-element"></div>
-    <div class="navigation-element"></div>
+    <div
+      v-for="n in storiesCount"
+      :key="n"
+      ref="stories"
+      :v-bind:ref="'nav-' + n"
+      class="navigation-element"
+      :style="{ width: 'calc(95% / ' + storiesCount + ')' }"
+    ></div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    storiesCount: Number
+  },
+  mounted() {
+    this.$root.$on('ActiveNavigation', currentIndex => {
+      for (let _i = 0; _i < this.storiesCount; _i++) {
+        this.$refs.stories[_i].style.backgroundColor = '#9e9e9e'
+      }
+
+      this.$refs.stories[currentIndex].style.backgroundColor = '#fff'
+    })
+  },
+  methods: {
+    setColor: function() {
+      const ss = document.getElementById('nav-1')
+      ss.style.backgroundColor = '#fff'
+    }
+  }
+}
+</script>
+
 <style>
 .navigation {
   display: flex;
@@ -20,7 +49,6 @@
 .navigation-element {
   border-radius: 2px;
   height: 3px;
-  width: calc(95% / 3);
   background: #9e9e9e;
 }
 

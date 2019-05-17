@@ -1,8 +1,11 @@
 <template>
-  <div class="story-parent">
+  <div v-touch:swipe="swipeHandler" class="story-parent">
     <div
+      v-touch:swipe="swipeHandler"
       class="story-content"
-      :style="{ 'background-image': 'url(' + storyImg + ')' }"
+      :style="{
+        'background-image': 'url(' + storyImage + ')'
+      }"
     ></div>
     <div class="info-block">
       <h1>{{ storyHeadline }}</h1>
@@ -11,10 +14,54 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Vue2TouchEvents from 'vue2-touch-events'
+
+Vue.use(Vue2TouchEvents)
+
+let currentIndex = 0
+
 export default {
   props: {
-    storyImg: String,
-    storyHeadline: String
+    rawData: Object
+  },
+  data: function() {
+    return {
+      storyImage: this.rawData.stories[currentIndex].image,
+      storyHeadline: this.rawData.stories[currentIndex].content
+    }
+  },
+  mounted() {
+    this.$root.$emit('ActiveNavigation', currentIndex)
+  },
+  methods: {
+    swipeHandler(direction) {
+      if (direction !== undefined) {
+        switch (direction) {
+          case 'left':
+            currentIndex += 1
+            this.$root.$emit('ActiveNavigation', currentIndex)
+            this.storyImage = this.rawData.stories[currentIndex].image
+            this.storyHeadline = this.rawData.stories[currentIndex].content
+            break
+          case 'right':
+            currentIndex -= 1
+            this.$root.$emit('ActiveNavigation', currentIndex)
+            this.storyImage = this.rawData.stories[currentIndex].image
+            this.storyHeadline = this.rawData.stories[currentIndex].content
+            break
+          case 'top':
+            this.storyHeadline = 'top'
+            break
+          case 'bottom':
+            this.storyHeadline = 'bottom'
+            break
+        }
+      }
+    },
+    next: function(event) {
+      this.storyImg = '/rehash-trash/3.jpeg'
+    }
   }
 }
 </script>
