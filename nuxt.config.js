@@ -2,7 +2,9 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
-
+  router: {
+    base: '/ngo-marketing-cms/website/'
+  },
   /*
    ** Headers of the page
    */
