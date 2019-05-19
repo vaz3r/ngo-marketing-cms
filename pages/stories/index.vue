@@ -54,7 +54,7 @@ export default {
       return { isValid: false }
     }
   },
-  mounted() {
+  created() {
     this.query = this.$route.query.id
     this.$root.$on('BaseImage', baseImage => {
       this.$refs.baseContainer.style.backgroundImage =
