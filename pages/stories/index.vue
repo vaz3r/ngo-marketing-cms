@@ -1,8 +1,7 @@
 <template>
   <div ref="baseContainer" class="base">
     <section>
-      <BaseStory v-if="isValid" :raw-data="rawData" />
-      <StoryException v-else />
+      <BaseStory v-show="isValid" :raw-data="rawData" />
     </section>
   </div>
 </template>
