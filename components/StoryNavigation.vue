@@ -24,12 +24,6 @@ export default {
 
       this.$refs.stories[currentIndex].style.backgroundColor = '#fff'
     })
-  },
-  methods: {
-    setColor: function() {
-      const ss = document.getElementById('nav-1')
-      ss.style.backgroundColor = '#fff'
-    }
   }
 }
 </script>

@@ -5,23 +5,40 @@
     "stories":[
         {
             "id": 1,
-            "content": "Rehash Trash: Recycling Rubbish, Renewing Lives",
-            "image": "/rehash-trash/2.jpeg"
+            "headline": "Rehash Trash: Recycling Rubbish, Renewing Lives",
+            "headlineColor": "#00bcd4",
+            "headlineOpacity": "70",
+            "image": "/rehash-trash/2.jpeg",
+            "ctaEnabled": "true",
+            "button": {
+                "label": "Learn More",
+                "action": "webpage",
+                "result": "http://www.google.com"
+            }
         },
         {
             "id": 2,
-            "content": "Recycling Rubbish: Environment + Community",
-            "image": "/rehash-trash/3.jpeg"
+            "headline": "Recycling Rubbish: Environment + Community",
+            "headlineColor": "#f44336",
+            "headlineOpacity": "70",
+            "image": "/rehash-trash/3.jpeg",
+            "ctaEnabled": "false"
         },
         {
             "id": 3,
-            "content": "Renewing Lives: Female Empowerment",
-            "image": "/rehash-trash/4.jpeg"
+            "headline": "Renewing Lives: Female Empowerment",
+            "headlineColor": "#673ab7",
+            "headlineOpacity": "70",
+            "image": "/rehash-trash/4.jpeg",
+            "ctaEnabled": "false"
         },
         {
             "id": 4,
-            "content": "RehashTrash.org",
-            "image": "/rehash-trash/shop-1.jpeg"
+            "headline": "RehashTrash.org",
+            "headlineColor": "#4caf50",
+            "headlineOpacity": "70",
+            "image": "/rehash-trash/shop-1.jpeg",
+            "ctaEnabled": "false"
         }
     ]
 }

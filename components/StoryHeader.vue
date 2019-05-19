@@ -42,11 +42,6 @@ export default {
   props: {
     brandLogo: String,
     brandName: String
-  },
-  computed: {
-    id() {
-      return this.$route.params.id
-    }
   }
 }
 </script>

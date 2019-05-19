@@ -1,13 +1,20 @@
 <template>
-  <section>
-    <BaseStory v-if="isValid" :raw-data="rawData" />
-    <StoryException v-else />
-  </section>
+  <div ref="baseContainer" class="base">
+    <script src="http://localhost:8098"></script>
+    <section>
+      <BaseStory v-if="isValid" :raw-data="rawData" />
+      <StoryException v-else />
+    </section>
+  </div>
 </template>
 
 <style>
+.base {
+  background-position: center;
+  background-size: cover;
+}
 section {
-  background: #262626;
+  background: #262626fa;
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -29,7 +36,7 @@ export default {
   },
   async asyncData({ route }) {
     const response = await axios
-      .get('http://www.mocky.io/v2/5cde98713000002b00430a39')
+      .get('http://www.mocky.io/v2/5cdfd16a3300001212608b2f')
       .catch(e => {
         return { isValid: false }
       })
@@ -42,6 +49,12 @@ export default {
     } else {
       return { isValid: false }
     }
+  },
+  mounted() {
+    this.$root.$on('BaseImage', baseImage => {
+      this.$refs.baseContainer.style.backgroundImage =
+        "url('" + baseImage + "')"
+    })
   }
 }
 </script>
