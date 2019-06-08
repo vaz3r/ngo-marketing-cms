@@ -2,9 +2,9 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
-  router: {
-    base: '/ngo-marketing-cms/website/'
-  },
+  // router: {
+  //   base: '/ngo-marketing-cms/website/'
+  // },
   /*
    ** Headers of the page
    */
@@ -17,7 +17,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-
+  
   /*
    ** Customize the progress-bar color
    */

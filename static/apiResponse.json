@@ -2,6 +2,7 @@
     "brand": "Rehash Trash",
     "logo": "/rehash-trash/logo.jpeg",
     "slogan": "Rehash Trash: Recycling Rubbish, Renewing Lives",
+    "donationAmount": 5,
     "stories":[
         {
             "id": 1,

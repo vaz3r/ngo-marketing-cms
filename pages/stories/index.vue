@@ -1,7 +1,9 @@
 <template>
   <div ref="baseContainer" class="base">
+    <script src="http://localhost:8098"></script>
     <section>
-      <BaseStory v-show="isValid" :raw-data="rawData" />
+      <BaseStory v-if="isValid" :raw-data="rawData" />
+      <StoryException v-else />
     </section>
   </div>
 </template>
